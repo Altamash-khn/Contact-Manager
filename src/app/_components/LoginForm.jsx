@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
+import { loginAction } from "../actions/auth";
 
 const LoginForm = () => {
   return (
-    <form action="" className="space-x-4">
+    <form action={loginAction}>
       <div>
         <label className="block text-sm font-medium text-gray-700">Email</label>
         <input
@@ -28,7 +29,7 @@ const LoginForm = () => {
         />
       </div>
 
-      <button type="submit" className="">
+      <button type="submit" className="w-full flex justify-center mt-6 bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition">
         Login
       </button>
     </form>
