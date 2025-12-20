@@ -1,15 +1,9 @@
+"use server";
 import { cookies } from "next/headers";
 
 // Create Session cookie
 export const createSession = async (user) => {
-//   await (cookies())().set("session", JSON.stringify(user), {
-//     httpOnly: true,
-//     secure: process.env.NODE_ENV === "production",
-//     maxAge: 60 * 60 * 24 * 7, // 1 week
-//     path: "/",
-//   });
-
-const cookieStore = await cookies(); // ✅ Promise unwrap
+  const cookieStore = await cookies();
 
   cookieStore.set("session", JSON.stringify(user), {
     httpOnly: true,
@@ -19,10 +13,9 @@ const cookieStore = await cookies(); // ✅ Promise unwrap
   });
 };
 
-
 // Get Session cookie
 export const getSession = async () => {
-  const session = await cookies().get("session")?.value;
+  const session = (await cookies()).get("session")?.value;
   return session ? JSON.parse(session) : null;
 };
 

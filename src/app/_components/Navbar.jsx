@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import LogoutButton from "./LogoutButton";
+import { getSession } from "../_lib/session";
 
-const Navbar = () => {
-  const session = false;
+const Navbar = async () => {
+  const session = await getSession();
+
   return (
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto p-4 flex justify-between items-center">
@@ -23,8 +25,11 @@ const Navbar = () => {
               <Link href="/login" className="hover:text-blue-600 mr-5">
                 Login
               </Link>
-              <Link href="/register" className="hover:text-blue-600
-              ">
+              <Link
+                href="/register"
+                className="hover:text-blue-600
+              "
+              >
                 Register
               </Link>
             </>
