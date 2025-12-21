@@ -1,12 +1,9 @@
-// "use client";
-
 import ContactList from "../_components/ContactList";
 import { getSession } from "../_lib/session";
 import { getContacts } from "../api/contact";
 
 const ContactPage = async () => {
   const user = await getSession();
-  console.log("user", user);
 
   if (!user) {
     return (

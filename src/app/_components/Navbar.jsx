@@ -15,7 +15,7 @@ const Navbar = async () => {
         <div className="flex items-center space-x-4">
           {session ? (
             <>
-              <Link href="/contacts" className="mr-8 hover:text-blue-600">
+              <Link href="/contact" className="mr-8 hover:text-blue-600">
                 Contacts
               </Link>
               <LogoutButton />
