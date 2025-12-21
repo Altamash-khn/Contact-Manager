@@ -22,5 +22,5 @@ export const loginAction = async (form) => {
 
 export const logoutAction = async () => {
   await deleteSession();
-  redirect("/lo gin");
+  // redirect("/login");
 };
